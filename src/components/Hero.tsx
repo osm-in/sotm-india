@@ -35,11 +35,11 @@ export default function Hero() {
         >
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105">
-                <img src="/images/logo.svg" alt="State of the Map India 2026 Logo" className="h-24 md:h-32 w-auto drop-shadow-lg" />
+                <img src="./public/images/logo.svg" alt="State of the Map India 2026 Logo" className="h-24 md:h-32 w-auto drop-shadow-lg" />
              </div>
              <div className="hidden md:block w-px h-20 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105">
-                <img src="/images/foss4g_asia_2026_logo.png" alt="FOSS4G Asia 2026 Logo" className="h-24 md:h-32 w-auto drop-shadow-lg" />
+                <img src="./public/images/foss4g_asia_2026_logo.png" alt="FOSS4G Asia 2026 Logo" className="h-24 md:h-32 w-auto drop-shadow-lg" />
              </div>
           </div>
           
