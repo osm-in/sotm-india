@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
 
 export default function Hero() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-primary">
       {/* Background Gradient & Effects */}
@@ -15,7 +16,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 opacity-10" 
         style={{ 
-          backgroundImage: 'url("/contour.svg")', 
+          backgroundImage: `url("${basePath}/contour.svg")`, 
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center'
@@ -36,11 +37,11 @@ export default function Hero() {
         >
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105">
-                <Image src="/images/logo.svg" alt="State of the Map India 2026 Logo" width={128} height={128} className="h-24 md:h-32 w-auto drop-shadow-lg" />
+                <img src={`${basePath}/images/logo.svg`} alt="State of the Map India 2026 Logo" className="h-24 md:h-32 w-auto drop-shadow-lg" />
              </div>
              <div className="hidden md:block w-px h-20 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105">
-                <Image src="/images/foss4g_asia_2026_logo.png" alt="FOSS4G Asia 2026 Logo" width={128} height={128} className="h-24 md:h-32 w-auto drop-shadow-lg" />
+                <img src={`${basePath}/images/foss4g_asia_2026_logo.png`} alt="FOSS4G Asia 2026 Logo" className="h-24 md:h-32 w-auto drop-shadow-lg" />
              </div>
           </div>
           
