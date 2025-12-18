@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -22,7 +23,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-accent/20 text-white shadow-lg font-sans">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:text-accent transition-colors" onClick={closeMenu}>
-          <img src="/images/logo.svg" alt="SOTM India 2026 Logo" className="h-8 w-auto" />
+          <Image src="/images/logo.svg" alt="SOTM India 2026 Logo" width={32} height={32} className="h-8 w-auto" />
           <span className="hidden sm:inline">SOTM India 2026</span>
         </Link>
 
