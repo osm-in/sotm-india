@@ -29,8 +29,16 @@ export default function Home() {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-primary mb-8">Speakers & Sessions</h2>
           <p className="text-lg text-neutral-slate mb-6">
-            Call for proposals and registration to open soon. Stay tuned for an exciting lineup of speakers from the mapping community.
+            We're inviting speakers from the mapping and open source geospatial community to share their knowledge and experiences.
           </p>
+          <a 
+            href="https://talks.geoinfo-lab.org/sotm-india-2026/cfp" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-secondary text-white font-bold rounded-full shadow-lg hover:bg-primary hover:shadow-xl transition-all transform hover:scale-105"
+          >
+            Submit Your Proposal
+          </a>
         </div>
       </section>
 
