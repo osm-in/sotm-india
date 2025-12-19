@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Check } from 'lucide-react';
 
@@ -45,6 +47,8 @@ const SponsorshipTier = ({
 );
 
 export default function Sponsorship() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  
   const tiers = [
     {
       name: "Platinum",
@@ -108,7 +112,7 @@ export default function Sponsorship() {
             Ready to sponsor or have questions? Reach out to us at <a href="mailto:contact@stateofthemap.in" className="text-secondary font-medium hover:underline">contact@stateofthemap.in</a>
           </p>
           <a 
-            href="/docs/sponsorship.pdf" 
+            href={`${basePath}/docs/sponsorship.pdf`}
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white font-semibold rounded-full shadow-lg hover:bg-primary-light transition-all transform hover:-translate-y-0.5"
