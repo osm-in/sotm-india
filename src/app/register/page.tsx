@@ -65,7 +65,7 @@ export default function RegisterPage() {
               Register for SOTM India 2026
             </h1>
             <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-              Choose the payment option depending on your residence status.
+              Choose your payment option according to your location or residency status.
             </p>
           </motion.div>
 
