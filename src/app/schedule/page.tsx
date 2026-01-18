@@ -8,8 +8,17 @@ export default function SchedulePage() {
   const [selectedDay, setSelectedDay] = useState<string>('day1');
 
   // Schedule data in table format
-  const scheduleData = {
+  const scheduleData: {
     day1: {
+      title: string;
+      subtitle: string;
+      columns: string[];
+      rows: string[][];
+    };
+  } = {
+    day1: {
+      title: 'Day 1 - January 24th, 2026',
+      subtitle: 'State of The Map India 2026',
       columns: ['Time', 'Session', 'Presenters', 'Duration'],
       rows: [
         ['9:00 AM - 10:30 AM', 'Keynote: Bridging AI and OpenStreetMap: A Comprehensive MCP Server for Geospatial Intelligence and Community-Driven Mapping', 'Saikat Maiti', '20 min'],
@@ -75,9 +84,6 @@ export default function SchedulePage() {
         <section className="py-12 px-6 bg-gradient-to-b from-primary/10 to-transparent">
           <div className="container mx-auto">
             <h1 className="text-5xl font-bold text-primary mb-4">Conference Schedule</h1>
-            <p className="text-lg text-neutral-slate max-w-2xl">
-              Date - January 24th, 2026
-            </p>
           </div>
         </section>
 
@@ -88,7 +94,6 @@ export default function SchedulePage() {
             <div className="mb-8">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-primary">{scheduleData.day1.title}</h2>
-                <p className="text-neutral-slate">{scheduleData.day1.subtitle}</p>
               </div>
 
               {/* Table for Desktop */}
