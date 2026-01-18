@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Sponsorship from '@/components/Sponsorship';
@@ -41,12 +40,12 @@ export default function Home() {
             >
               Submit Your Proposal
             </a>
-            <Link 
-              href="/schedule" 
+            <a 
+              href="https://www.openstreetmap.in/sotm-india/schedule" 
               className="inline-block px-8 py-3 bg-accent text-secondary font-bold rounded-full shadow-lg hover:bg-highlight hover:shadow-xl transition-all transform hover:scale-105"
             >
               View Full Schedule
-            </Link>
+            </a>
           </div>
         </div>
       </section>
