@@ -17,6 +17,8 @@ export default function SchedulePage() {
     };
   } = {
     day1: {
+      title: 'Day 1 - January 24th, 2026',
+      subtitle: 'State of The Map India 2026',
       columns: ['Time', 'Session', 'Presenters', 'Duration'],
       rows: [
         ['9:00 AM - 10:30 AM', 'Keynote: Bridging AI and OpenStreetMap: A Comprehensive MCP Server for Geospatial Intelligence and Community-Driven Mapping', 'Saikat Maiti', '20 min'],
