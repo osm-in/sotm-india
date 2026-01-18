@@ -204,7 +204,7 @@ export default function SchedulePage() {
               Register now to secure your spot at State of the Map India 2026
             </p>
             <a 
-              href="/register"
+              href="https://www.openstreetmap.in/sotm-india/register"
               className="inline-block px-8 py-3 bg-accent text-secondary font-bold rounded-full hover:bg-highlight shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
               Register Now
