@@ -10,8 +10,6 @@ export default function SchedulePage() {
   // Schedule data in table format
   const scheduleData = {
     day1: {
-      title: 'State of the Map India 2026',
-      subtitle: 'Single Day Conference Schedule',
       columns: ['Time', 'Session', 'Presenters', 'Duration'],
       rows: [
         ['9:00 AM - 10:30 AM', 'Keynote: Bridging AI and OpenStreetMap: A Comprehensive MCP Server for Geospatial Intelligence and Community-Driven Mapping', 'Saikat Maiti', '20 min'],
@@ -78,7 +76,7 @@ export default function SchedulePage() {
           <div className="container mx-auto">
             <h1 className="text-5xl font-bold text-primary mb-4">Conference Schedule</h1>
             <p className="text-lg text-neutral-slate max-w-2xl">
-              Join us for a full day of inspiring talks, hands-on workshops, and meaningful connections with the OSM community at State of the Map India 2026.
+              Date - January 24th, 2026
             </p>
           </div>
         </section>
