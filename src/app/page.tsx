@@ -28,17 +28,25 @@ export default function Home() {
       <section id="speakers" className="py-20 px-6 bg-slate-50">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-primary mb-8">Speakers & Sessions</h2>
-          <p className="text-lg text-neutral-slate mb-6">
+          <p className="text-lg text-neutral-slate mb-8">
             We're inviting speakers from the mapping and open source geospatial community to share their knowledge and experiences.
           </p>
-          <a 
-            href="https://talks.geoinfo-lab.org/sotm-india-2026/cfp" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-secondary text-white font-bold rounded-full shadow-lg hover:bg-primary hover:shadow-xl transition-all transform hover:scale-105"
-          >
-            Submit Your Proposal
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a 
+              href="https://talks.geoinfo-lab.org/sotm-india-2026/cfp" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-secondary text-white font-bold rounded-full shadow-lg hover:bg-primary hover:shadow-xl transition-all transform hover:scale-105"
+            >
+              Submit Your Proposal
+            </a>
+            <a 
+              href="/schedule" 
+              className="inline-block px-8 py-3 bg-accent text-secondary font-bold rounded-full shadow-lg hover:bg-highlight hover:shadow-xl transition-all transform hover:scale-105"
+            >
+              View Full Schedule
+            </a>
+          </div>
         </div>
       </section>
 
