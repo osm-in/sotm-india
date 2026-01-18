@@ -8,7 +8,14 @@ export default function SchedulePage() {
   const [selectedDay, setSelectedDay] = useState<string>('day1');
 
   // Schedule data in table format
-  const scheduleData = {
+  const scheduleData: {
+    day1: {
+      title: string;
+      subtitle: string;
+      columns: string[];
+      rows: string[][];
+    };
+  } = {
     day1: {
       columns: ['Time', 'Session', 'Presenters', 'Duration'],
       rows: [
