@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, IndianRupee, DollarSign } from 'lucide-react';
+import { ArrowLeft, IndianRupee, DollarSign, Info } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -143,12 +143,16 @@ export default function RegisterPage() {
                 <span className="text-accent text-lg">✓</span>
                 <p>All payments are final and non-refundable</p>
               </div>
-              <div className='flex items-start gap-3'>
-                <span className="text-accent text-lg">●</span>
-                <p>Please note that all financial transactions are happening through Rotten Grapes Pvt ltd, the main organiser of Foss4G Asia 2026.</p>
-              </div>
             </div>
-            </motion.div>
+            
+            {/* Financial Note */}
+            <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10 flex items-start gap-3">
+              <Info className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-neutral-300">
+                <span className="text-white font-medium">Note:</span> All financial transactions are processed through Rotten Grapes Pvt Ltd, the main organiser of FOSS4G Asia 2026.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
       <Footer />

@@ -92,23 +92,53 @@ export default function Sponsorship() {
   ];
 
   return (
-    <section id="sponsors" className="py-20 px-6 bg-slate-50">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-           <h2 className="text-3xl font-bold text-primary mb-4">Sponsorship Opportunities</h2>
-           <p className="text-lg text-neutral-slate max-w-2xl mx-auto">
-             Join us in making State of the Map India 2026 a success. Choose a sponsorship tier that fits your organization's goals.
+    <section id="sponsors" className="py-12 md:py-16 px-6 bg-slate-50">
+        {/* Gold Sponsors Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12" style={{ color: '#B5A642' }}>Gold Sponsor</h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-6xl mx-auto px-4">
+            <div className="bg-white p-10 md:p-16 rounded-3xl shadow-xl border border-yellow-100 flex items-center justify-center transition-transform hover:scale-105 duration-300">
+              <img src={`${basePath}/images/grabmaps.png`} alt="GrabMaps" className="h-32 md:h-48 w-auto" />
+            </div>
+          </div>
+        </div>
+
+        {/* Silver Sponsors Section (Supported by) */}
+        <div className="mb-20">
+          <h3 className="text-2xl md:text-3xl font-bold text-center text-neutral-charcoal mb-12">Supported by</h3>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-6xl mx-auto px-4">
+            {[
+              { src: 'eukarya.png', alt: 'Eukarya', h: 'h-16 md:h-20' },
+              { src: 'OSGEOTH.png', alt: 'OSGeo Thailand', h: 'h-16 md:h-20' },
+              { src: 'gateway.png', alt: 'Gateway Geo', h: 'h-16 md:h-20' },
+              { src: 'osgeo.png', alt: 'OSGeo', h: 'h-16 md:h-20' },
+              { src: 'tomtom.png', alt: 'TomTom', h: 'h-16 md:h-20' },
+              { src: 'stadia.png', alt: 'Stadia Maps', h: 'h-14 md:h-16' },
+              { src: 'foss4gjp.png', alt: 'FOSS4G Japan', h: 'h-14 md:h-16' },
+              { src: 'osgeo_kr.png', alt: 'OSGeo Korea', h: 'h-14 md:h-16' }
+            ].map((logo, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex items-center justify-center transition-transform hover:scale-105 duration-300">
+                <img src={`${basePath}/images/${logo.src}`} alt={logo.alt} className={`${logo.h} w-auto`} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mb-8">
+           <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">Sponsorship Opportunities</h2>
+           <p className="text-sm md:text-base text-neutral-slate max-w-xl mx-auto">
+             Join us in making SOTM India 2026 a success
            </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 max-w-6xl mx-auto">
           {tiers.map((tier, index) => (
             <SponsorshipTier key={index} {...tier} />
           ))}
         </div>
 
         <div className="text-center">
-          <p className="text-neutral-slate mb-6">
+          <p className="text-sm text-neutral-slate mb-6">
             Ready to sponsor or have questions? Reach out to us at <a href="mailto:contact@stateofthemap.in" className="text-secondary font-medium hover:underline">contact@stateofthemap.in</a>
           </p>
           <a 
@@ -120,7 +150,6 @@ export default function Sponsorship() {
             Download Sponsorship Brochure
           </a>
         </div>
-      </div>
     </section>
   );
 }
