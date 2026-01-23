@@ -72,9 +72,8 @@ export default function SchedulePage() {
     if (session.includes('Keynote') || session.includes('keynote')) return 'Keynote';
     if (session.includes('Tea') || session.includes('Networking') || session.includes('Lunch')) return 'Break';
     if (session.includes('Mapathon') || session.includes('Workshop')) return 'Workshop';
-    // Check for specific durations: 10, 15, 20, or 30 min talks
-    const durationMatch = duration.match(/\d+/);
-    if (session.includes('demo') || (durationMatch && ['10', '15', '20', '30'].includes(durationMatch[0]))) return 'Talk';
+    // Check for specific durations or demo
+    if (session.includes('demo') || duration === '10 min' || duration === '15 min' || duration === '20 min' || duration === '30 min') return 'Talk';
     return 'Talk';
   };
 
