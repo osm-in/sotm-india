@@ -68,11 +68,11 @@ export default function SchedulePage() {
     }
   };
 
-  const getSessionType = (session: string) => {
+  const getSessionType = (session: string, duration: string = '') => {
     if (session.includes('Keynote') || session.includes('keynote')) return 'Keynote';
     if (session.includes('Tea') || session.includes('Networking') || session.includes('Lunch')) return 'Break';
     if (session.includes('Mapathon') || session.includes('Workshop')) return 'Workshop';
-    if (session.includes('demo')) return 'Talk';
+    if (session.includes('demo') || duration.includes('10 min') || duration.includes('15 min') || duration.includes('20 min')) return 'Talk';
     return 'Talk';
   };
 
@@ -113,7 +113,7 @@ export default function SchedulePage() {
                   </thead>
                   <tbody>
                     {scheduleData.day1.rows.map((row, rowIdx) => {
-                      const sessionType = getSessionType(row[1]);
+                      const sessionType = getSessionType(row[1], row[3]);
                       const isTimeRow = row[0] !== '';
                       return (
                         <tr
@@ -148,7 +148,7 @@ export default function SchedulePage() {
               {/* Cards for Mobile */}
               <div className="sm:hidden space-y-4">
                 {scheduleData.day1.rows.map((row, idx) => {
-                  const sessionType = getSessionType(row[1]);
+                  const sessionType = getSessionType(row[1], row[3]);
                   const isTimeRow = row[0] !== '';
                   return (
                     <div
