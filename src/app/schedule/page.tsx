@@ -21,22 +21,22 @@ export default function SchedulePage() {
       subtitle: 'State of The Map India 2026',
       columns: ['Time', 'Session', 'Presenters', 'Duration'],
       rows: [
-        ['9:00 AM - 10:30 AM', 'Keynote: Bridging AI and OpenStreetMap: A Comprehensive MCP Server for Geospatial Intelligence and Community-Driven Mapping', 'Saikat Maiti', '20 min'],
+        ['9:00 AM - 10:30 AM', 'State of the Map in India', 'Ark Arjun', '10 min'],
+        ['', 'Keynote: Bridging AI and OpenStreetMap: A Comprehensive MCP Server for Geospatial Intelligence and Community-Driven Mapping', 'Saikat Maiti', '20 min'],
         ['', 'TomTom & OSM Community Program', 'Kiran Ahire', '20 min'],
-        ['', 'Why Building Community in India needs a Local First Approach, lessons from OSM Kerala', 'Ark Arjun', '30 min'],
-        ['', 'Meet the Open Mapping Guru Network: Empowering a Global Network of Humanitarian Mapping Leaders', 'Mikko Tamura', '20 min'],
-        ['10:30 AM - 11:00 AM', 'Tea/Networking', '-', '-'],
-        ['11:00 AM - 1:00 PM', 'Mapping Cyclone Amphan Impacts Using OpenStreetMap: A Disaster Management Case Study of West Bengal', 'Riyanka Banerjee, Debanjali Roy, Aditi Bera, Aditi Majhi', '10 min'],
+        ['', 'Why Building Community in India needs a Local First Approach, lessons from OSM Kerala', 'Ark Arjun', '20 min'],
+        ['', 'What are the challenges of running a Data Ops Team', 'Sarang Kulkarni', '15 min'],
+        ['', 'Group Photo', '-', '-'],
+        ['10:30 AM - 11:30 AM', 'Tea/Networking', '-', '-'],
+        ['11:30 AM - 1:00 PM', 'Mapping Cyclone Amphan Impacts Using OpenStreetMap: A Disaster Management Case Study of West Bengal', 'Riyanka Banerjee, Debanjali Roy, Aditi Bera, Aditi Majhi', '10 min'],
         ['', 'Spatial Distribution of Critical Disaster Management Facilities: A GIS-Based Approach of Maha Kumbh, Prayagraj', 'Bhavya Mangla, Devansh Negi, Shruti', '10 min'],
         ['', 'Need of Open Map Data for Creative Project', 'Bal Krishna Jha', '10 min'],
+        ['', 'How I use PMGSY data along with supporting datasets for adding roads for Unmapped Villages', 'Devdatta Tengshe', '20 min'],
         ['', 'Interactive map publishing demo using OSM and open data with Amche Atlas', 'Arun Ganesh', '30 min'],
-        ['', 'Why OpenStreetMap Is the Essential Data Layer for AI, Logistics, and Smart Cities', 'Brazil Singh', '20 min'],
-        ['', 'CHATMAP – The Breakthrough Community Mapping App!!', 'Mikko Tamura', '20 min'],
         ['1:00 PM - 2:00 PM', 'Lunch', '-', '-'],
-        ['2:00 PM - 3:30 PM', 'How I use PMGSY data along with supporting datasets for adding roads for Unmapped Villages', 'Devdatta Tengshe', '20 min'],
-        ['', 'The Role of Crowdsourced Damage Assessment in Disaster Response and Recovery', 'Mikko Tamura, Bernard Heng', '20 min'],
+        ['2:00 PM - 3:30 PM', 'The Role of Crowdsourced Damage Assessment in Disaster Response and Recovery', 'Mikko Tamura, Bernard Heng', '20 min'],
         ['', 'Introducing QuantaRoute - A Geocoding API Designed for India', 'Saikat Maiti', '20 min'],
-        ['', 'Data for Survival: Securing Human Life in Asia with the Open-Source Geospatial Shield', 'Brazil Singh', '20 min'],
+        ['', 'On Ground OSM Mapping', '-', '50 min'],
         ['3:30 PM - 4:00 PM', 'Tea/Networking', '-', '-'],
         ['4:00 PM - 5:30 PM', 'Mapathon', '-', '-']
       ]
@@ -68,11 +68,12 @@ export default function SchedulePage() {
     }
   };
 
-  const getSessionType = (session: string) => {
+  const getSessionType = (session: string, duration: string = '') => {
     if (session.includes('Keynote') || session.includes('keynote')) return 'Keynote';
     if (session.includes('Tea') || session.includes('Networking') || session.includes('Lunch')) return 'Break';
     if (session.includes('Mapathon') || session.includes('Workshop')) return 'Workshop';
-    if (session.includes('demo')) return 'Talk';
+    // Check for specific durations or demo
+    if (session.includes('demo') || duration === '10 min' || duration === '15 min' || duration === '20 min' || duration === '30 min') return 'Talk';
     return 'Talk';
   };
 
@@ -113,7 +114,7 @@ export default function SchedulePage() {
                   </thead>
                   <tbody>
                     {scheduleData.day1.rows.map((row, rowIdx) => {
-                      const sessionType = getSessionType(row[1]);
+                      const sessionType = getSessionType(row[1], row[3]);
                       const isTimeRow = row[0] !== '';
                       return (
                         <tr
@@ -148,7 +149,7 @@ export default function SchedulePage() {
               {/* Cards for Mobile */}
               <div className="sm:hidden space-y-4">
                 {scheduleData.day1.rows.map((row, idx) => {
-                  const sessionType = getSessionType(row[1]);
+                  const sessionType = getSessionType(row[1], row[3]);
                   const isTimeRow = row[0] !== '';
                   return (
                     <div

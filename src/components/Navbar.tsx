@@ -16,7 +16,6 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '#about', label: 'About' },
-    { href: '#speakers', label: 'Speakers' },
     { href: '/schedule', label: 'Schedule' },
     { href: '#venue', label: 'Venue' },
     { href: '#sponsors', label: 'Sponsors' },
