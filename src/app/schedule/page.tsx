@@ -72,7 +72,7 @@ export default function SchedulePage() {
     if (session.includes('Keynote') || session.includes('keynote')) return 'Keynote';
     if (session.includes('demo') || duration === '10 min' || duration === '15 min' || duration === '20 min' || duration === '30 min') return 'Talk';
     if (session.includes('Tea') || session.includes('Networking') || session.includes('Lunch')) return 'Break';
-    if (session.includes('Mapathon') || session.includes('Workshop')) return 'Workshop';
+    if (session.includes('Mapathon') || session.includes('Workshop') || session.includes('Ground')) return 'Workshop';
     // Check for specific durations or demo
     return 'Break';
   };
