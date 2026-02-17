@@ -1,40 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, IndianRupee, DollarSign, Info } from 'lucide-react';
+import { ArrowLeft, Info } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function RegisterPage() {
-  const inrFormRef = useRef<HTMLFormElement>(null);
-  const usdFormRef = useRef<HTMLFormElement>(null);
-  const [scriptsLoaded, setScriptsLoaded] = useState(false);
-
-  useEffect(() => {
-    if (scriptsLoaded) return;
-
-    // Load INR payment button script
-    if (inrFormRef.current && inrFormRef.current.children.length === 0) {
-      const inrScript = document.createElement('script');
-      inrScript.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-      inrScript.setAttribute('data-payment_button_id', 'pl_RsxsAuVLiRBfqt');
-      inrScript.async = true;
-      inrFormRef.current.appendChild(inrScript);
-    }
-
-    // Load USD payment button script
-    if (usdFormRef.current && usdFormRef.current.children.length === 0) {
-      const usdScript = document.createElement('script');
-      usdScript.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-      usdScript.setAttribute('data-payment_button_id', 'pl_RsxtpCWNQLwEGV');
-      usdScript.async = true;
-      usdFormRef.current.appendChild(usdScript);
-    }
-
-    setScriptsLoaded(true);
-  }, [scriptsLoaded]);
 
   return (
     <>
@@ -64,59 +36,15 @@ export default function RegisterPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Register for SOTM India 2026
             </h1>
-            <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-              Choose your payment option according to your location or residency status.
+            <div className="text-2xl font-bold text-red-400 mb-4 px-4 py-3 bg-red-500/20 rounded-lg border border-red-500/30 inline-block">
+              Registration is now closed
+            </div>
+            <p className="text-xl text-neutral-300 max-w-2xl mx-auto mt-6">
+              Thank you for your interest in SOTM India 2026. Registration is no longer available.
             </p>
           </motion.div>
 
-          {/* Payment Options */}
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 mb-10">
-            {/* INR Payment Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-accent/50 transition-all"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <div className="bg-accent/20 p-4 rounded-full">
-                  <IndianRupee className="w-8 h-8 text-accent" />
-                </div>
-              </div>
-              <h2 className="text-2xl font-bold text-white text-center mb-2">
-                Pay in INR
-              </h2>
-              <p className="text-neutral-300 text-center mb-6">
-                For participants registering from India
-              </p>
-              <div className="flex justify-center">
-                <form ref={inrFormRef} className="razorpay-form"></form>
-              </div>
-            </motion.div>
 
-            {/* USD Payment Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-accent/50 transition-all"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <div className="bg-accent/20 p-4 rounded-full">
-                  <DollarSign className="w-8 h-8 text-accent" />
-                </div>
-              </div>
-              <h2 className="text-2xl font-bold text-white text-center mb-2">
-                Pay in USD
-              </h2>
-              <p className="text-neutral-300 text-center mb-6">
-                For international participants
-              </p>
-              <div className="flex justify-center">
-                <form ref={usdFormRef} className="razorpay-form"></form>
-              </div>
-            </motion.div>
-          </div>
 
           {/* Additional Info */}
           <motion.div
@@ -125,23 +53,23 @@ export default function RegisterPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="max-w-3xl mx-auto mb-10 bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20"
           >
-            <h3 className="text-lg font-semibold text-white mb-4 text-center">Registration Information</h3>
+            <h3 className="text-lg font-semibold text-white mb-4 text-center">About SOTM India 2026</h3>
             <div className="space-y-3 text-neutral-200">
               <div className="flex items-start gap-3">
                 <span className="text-accent text-lg">✓</span>
-                <p>Secure payment processing powered by Razorpay</p>
+                <p>State of the Map India 2026 was held on January 24th, 2026</p>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-accent text-lg">✓</span>
-                <p>You will receive a confirmation email after successful payment</p>
+                <p>The event brought together OpenStreetMap enthusiasts and geospatial professionals</p>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-accent text-lg">✓</span>
-                <p>For any queries, please contact us at the event email</p>
+                <p>Hosted alongside FOSS4G Asia 2026 in Nashik, India</p>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-accent text-lg">✓</span>
-                <p>All payments are final and non-refundable</p>
+                <p>Thank you to all participants, speakers, and sponsors who made it a success</p>
               </div>
             </div>
             
@@ -149,7 +77,7 @@ export default function RegisterPage() {
             <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10 flex items-start gap-3">
               <Info className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
               <p className="text-sm text-neutral-300">
-                <span className="text-white font-medium">Note:</span> All financial transactions are processed through Rotten Grapes Pvt Ltd, the main organiser of FOSS4G Asia 2026.
+                <span className="text-white font-medium">Questions?</span> Please contact us for any inquiries about the event or future editions.
               </p>
             </div>
           </motion.div>
