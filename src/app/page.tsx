@@ -73,6 +73,26 @@ export default function Home() {
           <Sponsorship />
         </div>
       </section>
+
+      <section className="py-12 md:py-16 px-6 container mx-auto">
+        <div className="max-w-3xl mx-auto bg-primary/5 border-2 border-primary/20 rounded-2xl p-8 md:p-10">
+          <h2 className="text-3xl font-bold text-primary mb-6">Event Concluded</h2>
+          <p className="text-lg text-neutral-slate mb-6">
+            Thank you for making State of the Map India 2026 a success! The conference was held on January 24th, 2026, at the Nashik Engineering Cluster, and brought together the vibrant OpenStreetMap and open source geospatial communities.
+          </p>
+          <p className="text-lg text-neutral-slate mb-8">
+            Missed any sessions? You can now access talk recordings and presentations from all the speakers:
+          </p>
+          <a
+            href="https://wiki.openstreetmap.org/wiki/State_of_the_Map_India_2026#Talks_and_attendees"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all transform hover:scale-105"
+          >
+            View Talks & Presentations
+          </a>
+        </div>
+      </section>
       <Footer />
     </main>
   );
