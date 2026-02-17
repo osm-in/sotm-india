@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
-import CountdownTimer from './CountdownTimer';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -71,17 +70,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <CountdownTimer />
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/register" 
-              className="px-8 py-4 bg-highlight text-primary font-bold rounded-full shadow-lg hover:bg-white transition-all flex items-center gap-2 group"
-            >
-              Register Now
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4"></div>
         </motion.div>
       </div>
     </section>

@@ -33,14 +33,6 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
-              href="https://talks.geoinfo-lab.org/sotm-india-2026/cfp" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-secondary text-white font-bold rounded-full shadow-lg hover:bg-primary hover:shadow-xl transition-all transform hover:scale-105"
-            >
-              Submit Your Proposal
-            </a>
-            <a 
               href="https://www.openstreetmap.in/sotm-india/schedule" 
               className="inline-block px-8 py-3 bg-accent text-secondary font-bold rounded-full shadow-lg hover:bg-highlight hover:shadow-xl transition-all transform hover:scale-105"
             >

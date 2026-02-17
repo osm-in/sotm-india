@@ -44,14 +44,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          {!isRegisterPage && (
-            <Link 
-              href="/register" 
-              className="hidden md:block px-5 py-2 bg-accent text-secondary font-bold rounded-full shadow-lg hover:bg-highlight hover:shadow-xl transition-all transform hover:scale-105"
-            >
-              Register Now
-            </Link>
-          )}
           <button 
             className="md:hidden p-2 text-white hover:text-accent transition-colors"
             onClick={toggleMenu}
@@ -79,15 +71,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          {!isRegisterPage && (
-            <Link
-              href="/register"
-              className="block px-5 py-2 bg-accent text-secondary font-bold rounded-full shadow-lg hover:bg-highlight transition-all text-center mt-4"
-              onClick={closeMenu}
-            >
-              Register Now
-            </Link>
-          )}
         </div>
       </div>
     </nav>
